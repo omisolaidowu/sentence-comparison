@@ -27,10 +27,10 @@ router.add_api_route("/home", endpoint = compareSentence.home, methods=["GET"])
 router.add_api_route("/marktheory", endpoint = getAnswer.mark, methods=["POST"])
 
 # router.add_api_route("/explain", endpoint = compareSentence.compareExplanation, methods=["POST"])
-router.add_api_route(os.getenv("COMPARE_EXPLANATION_ENDPOINT", "/explain"), 
+router.add_api_route(os.getenv("COMPARE_EXPLANATION_ENDPOINT"), 
 endpoint = compareSentence.compareExplanation, methods=["POST"])
 
-router.add_api_route(os.getenv("COMPARE_LISTED_ENDPOINT", "/list"), 
+router.add_api_route(os.getenv("COMPARE_LISTED_ENDPOINT"), 
 endpoint = compareList.compareList, methods=["POST"])
 
 app.include_router(router)
